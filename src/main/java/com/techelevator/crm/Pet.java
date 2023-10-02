@@ -18,7 +18,7 @@ public class Pet {
     }
 
     public String listVaccinations(List<String> vaccinations){
-        String vaccinationList = String.join(",", vaccinations);
+        String vaccinationList = String.join(", ", vaccinations);
         return vaccinationList;
     }
     public String getName() {

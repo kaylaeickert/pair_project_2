@@ -23,6 +23,17 @@ public class PetTest {
         vaccinations.add("Parvo");
 
         String result = pet.listVaccinations(vaccinations);
+<<<<<<< HEAD
         Assert.assertEquals(vaccinations, result);
+=======
+        Assert.assertEquals(("Rabies, Distemper, Parvo"), result);
+    }
+    @Test
+    public void list_no_vaccination_should_return_empty_string(){
+        List<String> vaccinations = new ArrayList<>();
+        String result = pet.listVaccinations(vaccinations);
+        Assert.assertEquals("",result);
+>>>>>>> b86f6e13bdc944389fea57c46c51d025f9828826
     }
 }
+
