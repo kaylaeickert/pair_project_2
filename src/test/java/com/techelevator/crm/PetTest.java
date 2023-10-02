@@ -23,6 +23,6 @@ public class PetTest {
         vaccinations.add("Parvo");
 
         String result = pet.listVaccinations(vaccinations);
-        Assert.assertEquals(("Rabies", "Distemper", "Parvo"), result);
+        Assert.assertEquals(vaccinations, result);
     }
 }
