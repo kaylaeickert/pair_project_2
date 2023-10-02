@@ -1,13 +1,16 @@
 package com.techelevator.crm;
 
+import com.techelevator.Billable;
 import com.techelevator.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class Customer extends Person {
+public class Customer extends Person implements Billable {
     private String phoneNumber;
     private List<Pet> pets = new ArrayList<>();
+    private double balanceDue = 0;
 
     public Customer(String firstName, String lastName, String phoneNumber){
         super(firstName, lastName);
@@ -31,5 +34,13 @@ public class Customer extends Person {
 
     public void setPets(List<Pet> pets) {
         this.pets = pets;
+    }
+
+    @Override
+    public double getBalanceDue(Map<String, Double> servicesRendered) {
+        for (Map.Entry<String, Double> service : servicesRendered.entrySet()){
+            balanceDue = balanceDue + service.getValue();
+        }
+        return balanceDue;
     }
 }
